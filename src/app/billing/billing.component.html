@@ -1,0 +1,221 @@
+<body>
+  <nav class="sidebar">
+    <h2>Navigation</h2>
+    <ul>
+      <li
+      *ngFor="let item of navItems"
+      [ngStyle]="{'background-color': item.isSelected ? selectedItemColor : 'transparent'}"
+      (click)="selectNavItem(item)"
+    >
+      <a routerLink="{{ item.link }}">
+        <mat-icon>{{ item.icon }}</mat-icon> {{ item.label }}
+      </a>
+    </li>
+    </ul>
+    <img class="filesimg" src="assets/files.jpg"/>
+    <p>Need any help?</p>
+    <div class="footer-buttons">
+      <button mat-raised-button>Documentation</button>
+      <button mat-raised-button>Update</button>
+    </div>
+  </nav>
+
+  <div class="main-content">
+          <header class="topbar">
+            <div class="topbar-left">
+              <mat-icon>home</mat-icon>
+              <a routerLink="/dashboard">Dashboard</a>
+            </div>
+            <div class="topbar-right">
+              <mat-form-field>
+                <input matInput placeholder="Type here..">
+                <mat-icon matSuffix style="color: black;">search</mat-icon>
+              </mat-form-field>
+              <a routerLink="/sign-in"><mat-icon>person</mat-icon> Sign In</a>
+              <button class="settings-icon" (click)="toggleConfigurator()"><mat-icon>settings</mat-icon></button>
+              <mat-icon>notifications</mat-icon>
+            </div>
+          </header>
+
+      <div class="navbar">
+        <button class="tab active">Messages</button>
+        <button class="tab">Social</button>
+        <button class="tab">Notifications</button>
+        <button class="tab">Backup</button>
+      </div>
+
+      <div class="card-content">
+        <div class="left-section">
+          
+            <div class="card-section">
+              <img src="assets/atm card.jpg" alt="ATM Card Image" class="atm-card" />
+
+        
+              <div class="summary">
+          
+                <div class="summary-box">
+                  <div class="icon salary-icon"></div>
+                  <div class="summary-text">Salary</div>
+                  <div class="para">Belong Interactive</div>
+                  <div class="amount">+ $2000</div>
+                </div>
+
+                <div class="summary-box">
+                  <div class="icon paypal-icon"></div>
+                  <div class="summary-text">Paypal</div>
+                  <div class="para">Freelance Payment</div>
+                  <div class="amount">$455.00</div>
+                </div>
+              </div>
+            </div>
+
+
+          
+          <div class="payment-methods">
+            <h3>Payment Method</h3>
+            <button class="add-card" style="margin-top: -50px;">+ Add New Card</button>
+            <div style="display: flex; align-items: center; gap: 10px;">
+              <div class="card-info">
+                <div class="card-logo mastercard"></div>
+                <span>**** **** **** 7852</span>
+              </div>
+              <div class="card-info">
+                <div class="card-logo visa"></div>
+                <span>**** **** **** 5248</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="invoices">
+          <h3>Invoices</h3>
+          <button class="view" style="margin-top: -50px;">View All</button>
+          <ul>
+            <li>March 1, 2020 <span class="num">$180</span> <button class="pdf">PDF</button></li>
+            <li style="font-size: 0.6rem; margin-top: -12px;">#MS-0023456</li>
+            <li>July 10, 2021 <span class="num">$250</span> <button class="pdf">PDF</button></li>
+            <li style="font-size: 0.6rem; margin-top: -12px;">#MS-0023456</li>
+            <li>May 15, 2020  <span class="num">$120</span> <button class="pdf">PDF</button></li>
+            <li style="font-size: 0.6rem; margin-top: -12px;">#MS-0023456</li>
+            <li>June 25, 2019 <span class="num">$180</span> <button class="pdf">PDF</button></li>
+            <li style="font-size: 0.6rem; margin-top: -12px;">#MS-0023456</li>
+            <li>March 1, 2019 <span class="num">$300</span> <button class="pdf">PDF</button></li>
+            <li style="font-size: 0.6rem; margin-top: -12px;">#MS-0023456</li>
+          </ul>
+        </div>
+      </div>
+
+
+      <div class="bottom-section">
+        
+        <div class="billing-info">
+          <h3>Billing Information</h3>
+          <div class="info-container">
+              <div class="info-item">
+                  <div class="info-details">
+                      <h4>Oliver Liam</h4>
+                      <p><strong>Company Name:</strong> Viking Burrito</p>
+                      <p><strong>Email Address:</strong> oliver@burrito.com</p>
+                      <p><strong>VAT Number:</strong> FRB1235476</p>
+                  </div>
+                  <div class="info-actions">
+                      <button class="delete">Delete</button>
+                      <button class="edit">Edit</button>
+                  </div>
+              </div>
+              <div class="info-item">
+                  <div class="info-details">
+                      <h4>Lucas Harper</h4>
+                      <p><strong>Company Name:</strong> Stone Tech Zone</p>
+                      <p><strong>Email Address:</strong> lucas@stone-tech.com</p>
+                      <p><strong>VAT Number:</strong> FRB1235476</p>
+                  </div>
+                  <div class="info-actions">
+                      <button class="delete">Delete</button>
+                      <button class="edit">Edit</button>
+                  </div>
+              </div>
+              <div class="info-item">
+                  <div class="info-details">
+                      <h4>Ethan James</h4>
+                      <p><strong>Company Name:</strong> Fiber Notion</p>
+                      <p><strong>Email Address:</strong> ethan@fiber.com</p>
+                      <p><strong>VAT Number:</strong> FRB1235476</p>
+                  </div>
+                  <div class="info-actions">
+                      <button class="delete">Delete</button>
+                      <button class="edit">Edit</button>
+                  </div>
+              </div>
+          </div>
+      </div>
+
+
+      
+        <div class="transactions">
+          <h3>Your Transactions</h3>
+          <div class="transaction-section">
+              <span class="section-title">NEWEST</span>
+              <div class="transaction-item">
+                  <span class="icon negative">&#x2193;</span> 
+                  <div class="transaction-details">
+                      <span class="name">Netflix</span>
+                      <span class="date">27 March 2020, at 12:30 PM</span>
+                  </div>
+                  <span class="amount negative">- $2,500</span>
+              </div>
+              <div class="transaction-item">
+                  <span class="icon positive">&#x2191;</span> 
+                  <div class="transaction-details">
+                      <span class="name">Apple</span>
+                      <span class="date">27 March 2020, at 04:30 AM</span>
+                  </div>
+                  <span class="amount positive">+ $2,000</span>
+              </div>
+          </div>
+          
+          <div class="transaction-section">
+              <span class="section-title">YESTERDAY</span>
+              <div class="transaction-item">
+                  <span class="icon positive">&#x2191;</span>
+                  <div class="transaction-details">
+                      <span class="name">Stripe</span>
+                      <span class="date">26 March 2020, at 13:45 PM</span>
+                  </div>
+                  <span class="amount positive">+ $750</span>
+              </div>
+              <div class="transaction-item">
+                  <span class="icon positive">&#x2191;</span>
+                  <div class="transaction-details">
+                      <span class="name">HubSpot</span>
+                      <span class="date">26 March 2020, at 12:30 PM</span>
+                  </div>
+                  <span class="amount positive">+ $1,000</span>
+              </div>
+              <div class="transaction-item">
+                  <span class="icon positive">&#x2191;</span>
+                  <div class="transaction-details">
+                      <span class="name">Creative Tim</span>
+                      <span class="date">26 March 2020, at 08:30 AM</span>
+                  </div>
+                  <span class="amount positive">+ $2,500</span>
+              </div>
+              <div class="transaction-item">
+                  <span class="icon pending">&#x2192;</span> 
+                  <div class="transaction-details">
+                      <span class="name">Webflow</span>
+                      <span class="date">26 March 2020, at 05:00 AM</span>
+                  </div>
+                  <span class="amount pending">Pending</span>
+              </div>
+          </div>
+      </div>
+      </div>
+
+      <footer class="footer">
+        <p>&copy; 2024 Fathima Najiya's Learning App. All rights reserved.</p>
+      </footer>
+  </div>
+  <app-settings *ngIf="isConfiguratorOpen" (colorChange)="onColorChange($event)"></app-settings>
+  <router-outlet></router-outlet>
+</body>

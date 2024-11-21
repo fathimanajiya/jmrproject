@@ -1,0 +1,689 @@
+body {
+  font-family: Arial, sans-serif;
+  background: linear-gradient(to bottom, rgb(102, 204, 224) 45%, #f7f7f7 45%);
+  height: 100vh;
+}
+
+.tables {
+  display: flex;
+  height: 100vh;
+}
+
+.sidebar {
+  width: 200px;
+  padding: 20px;
+  background-color: white;
+  color: #34495E;
+  border-radius: 10px;
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: fixed;
+  top: 10px;
+  bottom: 10px;
+  left: 10px;
+}
+
+.sidebar h2 {
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: #34495E;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  width: 100%;
+  margin-top: -10px;
+}
+
+.sidebar li {
+  margin: 15px 0;
+  width: 100%;
+}
+
+.sidebar a {
+  color: #34495E;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  padding: 10px;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.sidebar a:hover {
+  background-color: #9db1c6;
+}
+
+.sidebar a mat-icon {
+  margin-right: 10px;
+}
+
+.filesimg{
+  height: 100px;
+  width: 100px;
+}
+/* Footer Section in Sidebar */
+.sidebar p {
+  font-size: 14px;
+  color: #7f8c8d;
+  margin-top: 20px;
+}
+
+.footer-buttons {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.footer-buttons button {
+  margin: 5px 0;
+  color: white;
+  background-color: #2980B9;
+  border-radius: 5px;
+}
+
+.footer-buttons button:hover {
+  background-color: #3498DB;
+}
+
+
+.main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  margin-left: 260px; /* Adjusted to fit the sidebar width */
+  padding: 20px;
+  background-color: transparent;
+}
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.topbar-left, 
+.topbar-right {
+    display: flex;
+    align-items: center;
+}
+
+.topbar-left mat-icon,
+.topbar-right mat-icon {
+    font-size: 24px; 
+    color: white;
+}
+
+.topbar-left a {
+    color: white;
+    font-size: 18px;
+    text-decoration: none;
+    margin-left: 10px;
+}
+
+
+.topbar-right a {
+    display: flex;
+    align-items: center;
+    color: white;
+    font-size: 16px;
+    text-decoration: none;
+}
+
+.topbar-right mat-icon {
+    cursor: pointer;
+    font-size: 24px; 
+    color: white;
+}
+
+.settings-icon {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.navbar {
+    display: flex;
+    gap: 5px;
+    padding: 10px;
+    color: white;
+    
+  }
+  
+  .tab {
+    padding: 10px 15px;
+    border-radius: 5px;
+    border: none;
+    background-color: #fff9f9;
+    cursor: pointer;
+    color: #333;
+    margin-left: 11px;
+  }
+  
+  .tab.active {
+    background-color: #ffffff;
+    color: #007bff;
+  }
+  
+  .card-content {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+  }
+  
+  .left-section {
+    width: 75%;
+  }
+  
+
+.card-section {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+  }
+  
+  .atm-card {
+    width: 500px;
+    height: 180px;
+    border-radius: 10px;
+  }
+  
+ 
+  .summary {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .summary-box {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 190px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .icon {
+    width: 40px;
+    height: 40px;
+    margin: 0 auto;
+    background-size: cover;
+    background-position: center;
+    margin-bottom: 10px;
+
+  }
+  
+  .salary-icon {
+    background-image: url('src/assets/salary.png'); 
+  }
+  
+  .paypal-icon {
+    background-image: url('src/assets/paypal.png'); 
+  }
+  
+  .summary-text {
+    font-size: 1rem;
+    color: #333;
+    margin-bottom: 5px;
+  }
+  .para {
+    font-size: 0.6rem;
+  }
+  .amount {
+    font-size: 0.9rem;
+  }
+  
+  .payment-methods {
+    padding: 20px;
+    background-color:white;
+    border-radius: 10px;
+    margin-top: 20px;
+  }
+  
+  .payment-methods h3 {
+    margin: 0 0 10px;
+    font-size: 1.2em;
+  }
+  
+  .add-card {
+    background-color: black;
+    color: #fff;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    float: right;
+  }
+  
+  .card-info {
+    display: flex;
+
+    margin-bottom: 10px;
+    align-items: center;
+    border: 1px black solid;
+    padding: 20px;
+    padding-right: 100px;
+    border-radius: 20px;
+    margin-right: 40px;
+    width: 350px;
+  }
+  
+  .card-logo {
+    width: 65px;
+    height: 55px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    border-radius: 5px;
+    margin-right: 10px;
+  }
+  
+  .card-logo.mastercard {
+    background-image: url('src/assets/mastercard.png');  
+  }
+  
+  .card-logo.visa {
+    background-image: url('src/assets/visa.png');  
+  }
+
+  
+  .invoices {
+    width: 25%;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+  }
+  
+  .view {
+    background-color: white;
+    color:blue;
+    border: double rgb(44, 44, 236) 2px;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    float: right;
+  }
+  .invoices h3 {
+    margin-bottom: 20px;
+  }
+  
+  .invoices ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .invoices ul li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  .num{
+    margin-right: -150px;
+    font-size: 0.9rem;
+  }
+  .pdf {
+    background-color:white ;
+    color: black;
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    border: none;
+  }
+  
+  .bottom-section {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+    box-shadow: 0 4px 0px rgba(0, 0, 0, 0.1);
+  }
+  
+  .billing-info {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    padding: 20px;
+    background-color: white ;
+    border-radius: 8px;
+    width: 900px;
+}
+
+.billing-info h3 {
+    font-size: 1.2em;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.info-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.info-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    background-color:#e8eaec;
+    border-radius: 10px;
+}
+
+.info-details {
+    color: #333;
+}
+
+.info-details h4 {
+    font-size: 1.1em;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.info-details p {
+    margin: 5px 0;
+    color: #666;
+}
+
+.info-details p strong {
+    color: #333;
+}
+
+.info-actions {
+    display: flex;
+    gap: 10px;
+}
+
+button.delete {
+    color: #ff4d4d;
+    border: none;
+    background: none;
+    font-size: 0.9em;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button.edit {
+    color: #333;
+    border: none;
+    background: none;
+    font-size: 0.9em;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button.delete:hover {
+    text-decoration: underline;
+    color: #e63946;
+}
+
+button.edit:hover {
+    text-decoration: underline;
+    color: #333;
+}
+
+  
+  .transactions {
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    width: 700px;
+}
+
+.transactions h3 {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.transaction-section {
+    margin-bottom: 10px;
+}
+
+.section-title {
+    display: block;
+    font-size: 0.9em;
+    color: #888;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.transaction-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.transaction-item:last-child {
+    border-bottom: none;
+}
+
+.icon {
+    font-size: 1.2em;
+    margin-right: 10px;
+}
+
+.icon.negative {
+    color: #ff4d4d; 
+}
+
+.icon.positive {
+    color: #28a745; 
+}
+
+.icon.pending {
+    color: #007bff; }
+
+.transaction-details {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.name {
+    font-weight: 500;
+    color: #333;
+}
+
+.date {
+    font-size: 0.8em;
+    color: #aaa;
+}
+
+.amount {
+    font-weight: bold;
+    font-size: 0.9em;
+}
+
+.amount.negative {
+    color: #ff4d4d;
+}
+
+.amount.positive {
+    color: #28a745;
+}
+
+.amount.pending {
+    color: #007bff;
+}
+
+  
+.footer {
+    padding: 15px;
+    background-color: white;
+    color:black;
+    font-size: 1.0em;
+    margin-top: 20px;
+    margin-left: ;
+  }
+  
+  .footer p {
+    margin: 0;
+  }
+  
+  /* Default styles are applied for large screens and desktops */
+
+/* For devices with a width of 1024px and below (tablets and small desktops) */
+@media (max-width: 1024px) {
+  .sidebar {
+    width: 160px;
+    padding: 15px;
+  }
+  
+  .main-content {
+    margin-left: 180px; /* Adjusted to fit the smaller sidebar */
+  }
+
+  .topbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .topbar-left a, .topbar-right a {
+    font-size: 14px;
+  }
+
+  .tables {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .summary-box {
+    width: 150px;
+    padding: 15px;
+  }
+  
+  .atm-card {
+    width: 100%;
+  }
+
+  .invoices {
+    width: 100%;
+    padding: 15px;
+  }
+  
+  .transactions {
+    width: 100%;
+    padding: 15px;
+  }
+}
+
+/* For devices with a width of 768px and below (large smartphones and small tablets) */
+@media (max-width: 768px) {
+  .sidebar {
+    position: static;
+    width: 100%;
+    height: auto;
+    flex-direction: row;
+    overflow-x: auto;
+  }
+
+  .main-content {
+    margin-left: 0;
+    padding: 10px;
+  }
+
+  .topbar {
+    padding: 10px;
+  }
+
+  .topbar-left a, .topbar-right a {
+    font-size: 12px;
+  }
+
+  .summary {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .summary-box {
+    width: 100%;
+  }
+  
+  .invoices ul li {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .payment-methods {
+    padding: 10px;
+  }
+  
+  .card-info {
+    flex-direction: column;
+    width: 100%;
+    padding: 10px;
+    margin-right: 0;
+  }
+
+  .billing-info {
+    width: 100%;
+  }
+
+  .transactions {
+    width: 100%;
+    padding: 10px;
+  }
+  
+  .footer {
+    text-align: center;
+  }
+}
+
+/* For devices with a width of 480px and below (smartphones) */
+@media (max-width: 480px) {
+  .sidebar {
+    flex-wrap: wrap;
+  }
+
+  .sidebar h2, .sidebar ul, .sidebar p {
+    font-size: 14px;
+  }
+
+  .main-content {
+    padding: 5px;
+  }
+
+  .topbar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .summary-box {
+    padding: 10px;
+  }
+
+  .card-info {
+    padding: 5px;
+  }
+
+  .footer {
+    font-size: 0.8em;
+    padding: 10px;
+  }
+
+  .summary, .transactions, .invoices {
+    padding: 10px;
+  }
+
+  .payment-methods {
+    padding: 5px;
+  }
+
+  .card-info {
+    padding: 5px;
+    width: 100%;
+  }
+}

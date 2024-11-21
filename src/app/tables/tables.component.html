@@ -1,0 +1,129 @@
+<body>
+<div>
+    <nav class="sidebar">
+      <h2>Navigation</h2>
+      <ul>
+        <li
+        *ngFor="let item of navItems"
+        [ngStyle]="{'background-color': item.isSelected ? selectedItemColor : 'transparent'}"
+        (click)="selectNavItem(item)"
+      >
+        <a routerLink="{{ item.link }}">
+          <mat-icon>{{ item.icon }}</mat-icon> {{ item.label }}
+        </a>
+      </li>
+      </ul>
+      <img class="filesimg" src="assets/files.jpg"/>
+      <p>Need any help?</p>
+      <div class="footer-buttons">
+        <button mat-raised-button>Documentation</button>
+        <button mat-raised-button>Update</button>
+      </div>
+    </nav>
+  
+  <div class="main-content">
+      <header class="topbar">
+        <div class="topbar-left">
+          <mat-icon>home</mat-icon>
+          <a routerLink="/dashboard">Dashboard</a>
+        </div>
+        <div class="topbar-right">
+          <mat-form-field>
+            <input matInput placeholder="Type here..">
+            <mat-icon matSuffix>search</mat-icon>
+          </mat-form-field>
+          <a routerLink="/sign-in"><mat-icon>person</mat-icon> Sign In</a>
+          <button class="settings-icon" (click)="toggleConfigurator()"><mat-icon>settings</mat-icon></button>
+          <mat-icon>notifications</mat-icon>
+        </div>
+      </header>
+
+      <div class="tables-container" style="background-color:white; margin:35px;">
+        <table mat-table [dataSource]="authors" class="mat-elevation-z8" style="height: 50%;">
+          <caption>
+            <h3>Authors Table</h3>
+          </caption>
+          
+
+          <ng-container matColumnDef="name">
+            <th mat-header-cell *matHeaderCellDef> Name </th>
+            <td mat-cell *matCellDef="let author">
+              <mat-icon>person</mat-icon> 
+              {{author.name}}
+            </td>
+          </ng-container>
+
+          <ng-container matColumnDef="email">
+            <th mat-header-cell *matHeaderCellDef> Email </th>
+            <td mat-cell *matCellDef="let author"> {{author.email}} </td>
+          </ng-container>
+
+          
+          <ng-container matColumnDef="phone">
+            <th mat-header-cell *matHeaderCellDef> Phone </th>
+            <td mat-cell *matCellDef="let author"> {{author.phone}} </td>
+          </ng-container>
+
+          
+          <ng-container matColumnDef="actions">
+            <th mat-header-cell *matHeaderCellDef> Actions </th>
+            <td mat-cell *matCellDef="let author">
+              <button mat-button (click)="editAuthor(author)" class="edit">Edit</button>
+              <button mat-button (click)="deleteAuthor(author)" class="delete">Delete</button>
+            </td>
+          </ng-container>
+
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+
+        
+        <table mat-table [dataSource]="projects" class="mat-elevation-z8" style="height: 50%;">
+          <caption>
+            <h3>Projects Table</h3>
+          </caption>
+
+          
+          <ng-container matColumnDef="project">
+            <th mat-header-cell *matHeaderCellDef> Project </th>
+            <td mat-cell *matCellDef="let project">
+              <mat-icon>work</mat-icon> 
+              {{project.name}}
+            </td>
+          </ng-container>
+
+          
+          <ng-container matColumnDef="budget">
+            <th mat-header-cell *matHeaderCellDef> Budget </th>
+            <td mat-cell *matCellDef="let project"> {{project.budget}} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="status">
+            <th mat-header-cell *matHeaderCellDef> Status </th>
+            <td mat-cell *matCellDef="let project"> {{project.status}} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="completion">
+            <th mat-header-cell *matHeaderCellDef> Completion </th>
+            <td mat-cell *matCellDef="let project">
+              <mat-progress-bar mode="determinate" [value]="project.completion"></mat-progress-bar>
+            </td>
+          </ng-container>
+
+          <ng-container matColumnDef="actions">
+            <th mat-header-cell *matHeaderCellDef> Actions </th>
+            <td mat-cell *matCellDef="let project">
+              <button mat-button (click)="deleteProject(project)" class="delete">Delete</button>
+            </td>
+          </ng-container>
+
+          <tr mat-header-row *matHeaderRowDef="displayedProjectColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedProjectColumns;"></tr>
+        </table>
+      </div>
+  </div>
+  
+  <app-settings *ngIf="isConfiguratorOpen" (colorChange)="onColorChange($event)"></app-settings>
+  <router-outlet></router-outlet>
+</div>
+</body>

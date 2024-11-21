@@ -1,0 +1,222 @@
+<body style="font-family: Arial, sans-serif; margin: 0;">
+<div class="dashboard">
+  <nav class="sidebar">
+    <h2>Navigation</h2>
+    <ul>
+      <li
+      *ngFor="let item of navItems"
+      [ngStyle]="{'background-color': item.isSelected ? selectedItemColor : 'transparent'}"
+      (click)="selectNavItem(item)"
+    >
+      <a routerLink="{{ item.link }}">
+        <mat-icon>{{ item.icon }}</mat-icon> {{ item.label }}
+      </a>
+    </li>
+    </ul>
+    <img class="filesimg" src="assets/files.jpg"/>
+    <p>Need any help?</p>
+    <div class="footer-buttons">
+      <button mat-raised-button>Documentation</button>
+      <button mat-raised-button>Update</button>
+    </div>
+  </nav>
+
+  <div class="main-content">
+    <header class="topbar">
+      <div class="topbar-left">
+        <mat-icon>home</mat-icon>
+        <a routerLink="/dashboard">Dashboard</a>
+      </div>
+      <div class="topbar-right">
+        <mat-form-field>
+          <input matInput placeholder="Type here..">
+          <mat-icon matSuffix>search</mat-icon>
+        </mat-form-field>
+        <a routerLink="/sign-in"><mat-icon>person</mat-icon> Sign In</a>
+        <button class="settings-icon" (click)="toggleConfigurator()"><mat-icon>settings</mat-icon></button>
+        <mat-icon>notifications</mat-icon>
+      </div>
+    </header>
+
+    <div class="cards">
+      <mat-card class="card card-blue">
+        <mat-card-header>
+          <div>
+            <h3>TODAY'S MONEY</h3>
+            <p style="margin-top: -10px;">$53,000</p>
+            <small><span style="color: green;">+55%</span> since yesterday</small>
+          </div>
+          <mat-icon class="icons" style="background-color: rgb(73, 92, 180);">account_balance_wallet</mat-icon>
+        </mat-card-header>
+      </mat-card>
+    
+      <mat-card class="card card-green">
+        <mat-card-header>
+          <div>
+            <h3>TODAY'S USERS</h3>
+            <p style="margin-top: -10px;">2,300</p>
+            <small><span style="color: green;">+3%</span> since last week</small>
+          </div>
+          <mat-icon class="icons" style="background-color: red;">group</mat-icon>
+        </mat-card-header>
+      </mat-card>
+    
+      <mat-card class="card card-red">
+        <mat-card-header>
+          <div>
+            <h3>NEW CLIENTS</h3>
+            <p style="margin-top: -10px;">+3,462</p>
+            <small><span style="color: green;">-2%</span> since last quarter</small>
+          </div>
+          <mat-icon class="icons" style="background-color: green;">person_add</mat-icon>
+        </mat-card-header>
+      </mat-card>
+    
+      <mat-card class="card card-orange">
+        <mat-card-header>
+          <div>
+            <h3>SALES</h3>
+            <p style="margin-top: -10px;">$103,430</p>
+            <small><span style="color: green;">+5%</span> than last month</small>
+          </div>
+          <mat-icon class="icons" style="background-color: orange;">shopping_cart</mat-icon>
+        </mat-card-header>
+      </mat-card>
+    </div>
+    
+
+    <div class="content-row">
+      <div class="form-container">
+        <form (ngSubmit)="onSubmit()">
+          <mat-form-field>
+            <input matInput placeholder="Name" [(ngModel)]="formData.name" name="name">
+          </mat-form-field>
+          <mat-form-field>
+            <input matInput placeholder="Email" [(ngModel)]="formData.email" name="email">
+          </mat-form-field>
+          <mat-form-field>
+            <input matInput placeholder="Phone Number" [(ngModel)]="formData.phone" name="phone" required>
+          </mat-form-field>
+          <button style="background-color: skyblue;" class="sub" mat-raised-button type="submit">{{ isEditing ? 'Update' : 'Submit' }}</button>
+        </form>
+      </div>
+
+      <div class="carousel-container">
+        <div class="carousel">
+          <div class="carousel-images">
+            <div *ngFor="let img of carouselImages; let i = index"
+                 class="carousel-image"
+                 [ngClass]="{ 'active': i === currentImageIndex }">
+              <img [src]="img" alt="Carousel Image {{i + 1}}">
+            </div>
+          </div>
+      
+          
+          <div class="arrow left-arrow" (click)="prevImage()">
+            <mat-icon>chevron_left</mat-icon>
+          </div>
+      
+          
+          <div class="arrow right-arrow" (click)="nextImage()">
+            <mat-icon>chevron_right</mat-icon>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+
+    <div class="tables-section">
+      <!-- Sales by Country Table -->
+      <div class="table country-sales">
+        <h3>Sales by Country</h3>
+        <table>
+          <tr>
+            <th>Country</th>
+            <th>Sales</th>
+            <th>Value</th>
+            <th>Bounce</th>
+          </tr>
+          <tr>
+            <td>
+              <img src="assets/usa.png" alt="USA" class="flag"> United States
+            </td>
+            <td>2500</td>
+            <td>$230,900</td>
+            <td>29.9%</td>
+          </tr>
+          <tr>
+            <td>
+              <img src="assets/germany.png" alt="Germany" class="flag"> Germany
+            </td>
+            <td>3,900</td>
+            <td>$440,000</td>
+            <td>40.22%</td>
+          </tr>
+          <tr>
+            <td>
+              <img src="assets/uk.png" alt="UK" class="flag"> Great Britain
+            </td>
+            <td>1,400</td>
+            <td>$190,700</td>
+            <td>23.44%</td>
+          </tr>
+          <tr>
+            <td>
+              <img src="assets/brazil.png" alt="Brazil" class="flag"> Brazil
+            </td>
+            <td>562</td>
+            <td>$143,960</td>
+            <td>32.14%</td>
+          </tr>
+        </table>
+      </div>
+    
+      <!-- Categories Table -->
+      <div class="table categories">
+        <h3>Categories</h3>
+        <div class="category">
+          <div class="icon">📱</div>
+          <div class="category-text">
+            <strong>Devices</strong><br>
+            250 in stock, 346+ sold
+          </div>
+        </div>
+        <div class="category">
+          <div class="icon">🎫</div>
+          <div class="category-text">
+            <strong>Tickets</strong><br>
+            123 closed, 15 open
+          </div>
+        </div>
+        <div class="category">
+          <div class="icon">📋</div>
+          <div class="category-text">
+            <strong>Error Logs</strong><br>
+            1 is active, 40 closed
+          </div>
+        </div>
+        <div class="category">
+          <div class="icon">😊</div>
+          <div class="category-text">
+            <strong>Happy Users</strong><br>
+            + 430
+          </div>
+        </div>
+      </div>
+    </div>
+    
+
+    <footer>
+      <span>&copy; 2024 Fathima Najiya's Learning App. All rights reserved</span>
+      <nav>
+        <a>About Us</a>
+        <a>Blog</a>
+        <a>License</a>
+      </nav>
+    </footer>
+  </div>
+  <app-settings *ngIf="isConfiguratorOpen" (colorChange)="onColorChange($event)"></app-settings>
+  <router-outlet></router-outlet>
+</div>
+
+</body>

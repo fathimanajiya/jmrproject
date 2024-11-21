@@ -1,0 +1,189 @@
+<body>
+  <nav class="sidebar">
+    <h2>Navigation</h2>
+    <ul>
+      <li
+      *ngFor="let item of navItems"
+      [ngStyle]="{'background-color': item.isSelected ? selectedItemColor : 'transparent'}"
+      (click)="selectNavItem(item)"
+    >
+      <a routerLink="{{ item.link }}">
+        <mat-icon>{{ item.icon }}</mat-icon> {{ item.label }}
+      </a>
+    </li>
+    </ul>
+    <img class="filesimg" src="assets/files.jpg"/>
+    <p>Need any help?</p>
+    <div class="footer-buttons">
+      <button mat-raised-button>Documentation</button>
+      <button mat-raised-button>Update</button>
+    </div>
+  </nav>
+
+  <div class="main-content">
+          <header class="topbar">
+            <div class="topbar-left">
+              <mat-icon>home</mat-icon>
+              <a routerLink="/dashboard">Dashboard</a>
+            </div>
+            <div class="topbar-right">
+              <mat-form-field>
+                <input matInput placeholder="Type here..">
+                <mat-icon matSuffix>search</mat-icon>
+              </mat-form-field>
+              <a routerLink="/sign-in"><mat-icon>person</mat-icon> Sign In</a>
+              <button class="settings-icon" (click)="toggleConfigurator()"><mat-icon>settings</mat-icon></button>
+              <mat-icon>notifications</mat-icon>
+            </div>
+          </header>
+
+      <div class="container">
+        <!-- Profile Card -->
+        <div class="userheader">
+          <div class="profile-details">
+            <img src="assets/user.jpg" alt="User Image" class="profile-image" />
+            <div>
+              <h2 style="color: black; font-weight: 400;">Alex Thompson</h2>
+              <p id="CEO">CEO / Co-Founder</p>
+            </div>
+          </div>
+          <div class="profile-actions">
+            <button class="action-button"><i class="icon-app"></i> App</button>
+            <button class="action-button"><i class="icon-messages"></i> Message</button>
+            <button class="action-button"><i class="icon-settings"></i> Settings</button>
+          </div>
+        </div>
+
+        <!-- Info Cards Row -->
+        <div class="content">
+          <!-- Platform Settings -->
+          <div class="card platform-settings">
+            <h3>Platform Settings</h3>
+            <div class="section">
+              <h4 style="color: black;">Account</h4>
+              <label>
+                <input type="checkbox" checked />
+                Email me when someone follows me
+              </label>
+              <label>
+                <input type="checkbox" />
+                Email me when someone answers on my post
+              </label>
+              <label>
+                <input type="checkbox" checked />
+                Email me when someone mentions me
+              </label>
+            </div>
+            <div class="section">
+              <h4 style="color: black;">Application</h4>
+              <label>
+                <input type="checkbox" />
+                New launches and projects
+              </label>
+              <label>
+                <input type="checkbox" checked />
+                Monthly product updates
+              </label>
+              <label>
+                <input type="checkbox" checked />
+                Subscribe to newsletter
+              </label>
+            </div>
+          </div>
+      
+          <!-- Profile Information -->
+          <div class="card profile-info">
+            <h3 id="profilecard">Profile Information</h3>
+            <p id="personal">
+              Hi, I'm Alec Thompson, Decisions: If you can't decide, the answer is no.
+              If two equally difficult paths, choose the one more painful in the short term
+              (pain avoidance is creating an illusion of equality).
+            </p>
+            <div id="fullname"><strong style="color: black;">Full Name:</strong> Alec M. Thompson</div>
+            <div id="mobile"><strong style="color: black;">Mobile:</strong> (44) 123 1234 123</div>
+            <div id="mobile"><strong style="color: black;">Email:</strong> alec.thompson@mail.com</div>
+            <div id="mobile"><strong style="color: black;">Location:</strong> USA</div>
+          </div>
+      
+          <!-- Conversations -->
+          <div class="card conversations">
+            <h3>Conversations</h3>
+            <div class="conversation">
+              <img src="assets/user1.jpg" alt="Sophie B." />
+              <div>
+              <p id="username">Sophie B.</p>
+              <p id="usermsg">Hi! I need more information...</p>
+              </div>
+              <button>Reply</button>
+            </div>
+            <div class="conversation">
+              <img src="assets/user2.jpg" alt="Anne Marie" />
+              <div>
+              <p id="username">Anne Marie</p>
+              <p id="usermsg">Awesome work, can you...</p>
+              </div>
+              <button>Reply</button>
+            </div>
+            <div class="conversation">
+              <img src="assets/user3.jpg" alt="Ivanna" />
+              <div>
+              <p id="username">Ivanna</p>
+              <p id="usermsg">About files I can...</p>
+              </div>
+              <button>Reply</button>
+            </div>
+            <div class="conversation">
+              <img src="assets/user4.jpg" alt="Peterson" />
+              <div>
+              <p id="username">Peterson</p>
+              <p id="usermsg">Have a great afternoon...</p>
+              </div>
+              <button>Reply</button>
+            </div>
+            <div class="conversation">
+              <img src="assets/user5.jpg" alt="Nick Daniel" />
+              <div>
+              <p id="username">Nick Daniel</p>
+              <p id="usermsg">Hi! I need more information...</p>
+              </div>
+              <button>Reply</button>
+            </div>
+          </div>
+        </div>
+
+        
+        <div class="projects">
+          <div class="project-card">
+            <img src="assets/project1.jpeg" alt="Project 1" />
+            <h5 style="color: black;">#Project1</h5>
+            <h4 id="projectname">Modern</h4>
+            <p>As Uber works through a huge amount of internal management turmoil.</p>
+            <button class="view-project">View Project</button>
+          </div>
+
+          <div class="project-card">
+            <img src="assets/project2.jpeg" alt="Project 2" />
+            <h5 style="color: black;">#project2</h5>
+            <h4 id="projectname">Scandinavian</h4>
+            <p>Music is something that every person has his or her own specific opinion about.</p>
+            <button class="view-project">View Project</button>
+          </div>
+
+          <div class="project-card">
+            <img src="assets/project3.jpg" alt="Project 3" />
+            <h5 style="color: black;">#project3</h5>
+            <h4 id="projectname">Minimalist</h4>
+            <p>Different people have different taste, and various types of music.</p>
+            <button class="view-project">View Project</button>
+          </div>
+
+          <div class="project-card" id="newproject">
+            <p style="margin-top: 120px;">+</p>
+            <p>New Project</p>
+          </div>
+        </div>
+      </div>
+  </div>
+  <app-settings *ngIf="isConfiguratorOpen" (colorChange)="onColorChange($event)"></app-settings>
+  <router-outlet></router-outlet>
+</body>

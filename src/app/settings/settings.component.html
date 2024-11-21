@@ -1,0 +1,51 @@
+<body>
+    <div class="configurator">
+        
+        <h2>Configurator</h2><span><button class="close-btn" (click)="closeConfigurator()">×</button></span>
+        <p>See our dashboard options.</p>
+        <!-- Sidenav Colors -->
+        <label>Sidenav Colors</label>
+        <div class="color-options">
+            <div class="purple" (click)="changeColor('#6a1b9a')"></div>
+            <div class="black" (click)="changeColor('#000000')"></div>
+            <div class="blue" (click)="changeColor('#0288d1')"></div>
+            <div class="green" (click)="changeColor('#388e3c')"></div>
+            <div class="orange" (click)="changeColor('#f57c00')"></div>
+            <div class="red" (click)="changeColor('#d32f2f')"></div>  
+        </div>
+
+        <!-- Sidenav Type -->
+        <label>Sidenav Type</label>
+        <p>Choose between 2 different sidenav types.</p>
+        <div class="sidenav-type">
+            <button #sidenavButton class="active">White</button>
+            <button #sidenavButton>Dark</button>
+        </div>
+
+        <!-- Toggle Options -->
+        <div class="toggle-option">
+            <label>Navbar Fixed</label>
+            <div  #toggleSwitch class="toggle-switch"></div>
+        </div>
+
+        <div class="toggle-option">
+            <label>Sidenav Mini</label>
+            <div #toggleSwitch class="toggle-switch"></div>
+        </div>
+
+        <div class="toggle-option">
+            <label>Light / Dark</label>
+            <div #toggleSwitch class="toggle-switch"></div>
+        </div>
+
+        <!-- Buttons -->
+        <div class="btn-container">
+            <button class="buy-now">Buy Now</button>
+            <button class="free-download">Free Download</button>
+            <button class="view-doc">View Documentation</button>
+        </div>
+
+
+    </div>
+
+</body>

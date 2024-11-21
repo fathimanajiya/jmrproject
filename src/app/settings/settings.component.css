@@ -1,0 +1,183 @@
+.configurator {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 300px;
+    height: 100%;
+    background-color: #fff;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.3);
+    padding: 20px;
+    z-index: 1000;
+}
+
+
+/* Header styling */
+.configurator h2 {
+    font-size: 18px;
+    margin-bottom: 5px;
+    color: #34495e;
+}
+
+.configurator p {
+    font-size: 14px;
+    color: #7f8c8d;
+    margin-bottom: 20px;
+}
+
+.close-btn {
+    background: none;
+    border: none;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    float: right;
+  }
+
+.color-options {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+.color-options div {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 2px solid transparent;
+}
+
+  
+  .color-circle {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 2px solid transparent;
+  }
+  
+  .color-circle:hover {
+    border: 2px solid #ccc;
+  }
+  
+  .purple {
+    background-color: #6a1b9a;
+  }
+  
+  .black {
+    background-color: #000000;
+  }
+  
+  .blue {
+    background-color: #0288d1;
+  }
+  
+  .green {
+    background-color: #388e3c;
+  }
+  
+  .orange {
+    background-color: #f57c00;
+  }
+  
+  .red {
+    background-color: #d32f2f;
+  }
+
+/* Sidenav type */
+.sidenav-type {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.sidenav-type button {
+    width: 48%;
+    padding: 10px;
+    border: 1px solid #17a2b8;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.sidenav-type .active {
+    background-color: #17a2b8;
+    color: white;
+    font-weight: bold;
+}
+
+/* Toggle switches */
+.toggle-option {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.toggle-option label {
+    font-size: 14px;
+    color: #34495e;
+}
+
+.toggle-switch {
+    position: relative;
+    width: 40px;
+    height: 20px;
+    background-color: #ccc;
+    border-radius: 12px;
+    cursor: pointer;
+}
+
+.toggle-switch:before {
+    content: "";
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 16px;
+    height: 16px;
+    background-color: white;
+    border-radius: 50%;
+    transition: all 0.3s;
+}
+
+.toggle-switch.active {
+    background-color: #17a2b8;
+}
+
+.toggle-switch.active:before {
+    left: 22px;
+}
+
+/* Buttons */
+.btn-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.btn-container button {
+    padding: 10px;
+    font-size: 14px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn-container .buy-now {
+    background-color: #17a2b8;
+    color: white;
+}
+
+.btn-container .free-download {
+    background-color: #34495e;
+    color: white;
+}
+
+.btn-container .view-doc {
+    background-color: white;
+    color: #34495e;
+    border: 1px solid #34495e;
+}

@@ -1,0 +1,531 @@
+body {
+  font-family: Arial, sans-serif;
+  background: 
+    linear-gradient(to bottom, transparent 45%, #f7f7f7 45%), 
+    url('src/assets/userbg.jpg');
+  background-size: cover, 100%;
+  background-repeat: no-repeat;
+  background-position: top, top;
+  height: 100vh;
+  color: gray;
+}
+
+
+.tables {
+  display: flex;
+  height: 100vh;
+}
+
+.sidebar {
+  width: 200px;
+  padding: 20px;
+  background-color: white;
+  color: #34495E;
+  border-radius: 10px;
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: fixed;
+  top: 10px;
+  bottom: 10px;
+  left: 10px;
+}
+
+.sidebar h2 {
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: #34495E;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  width: 100%;
+  margin-top: -10px;
+}
+
+.sidebar li {
+  margin: 15px 0;
+  width: 100%;
+}
+
+.sidebar a {
+  color: #34495E;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  padding: 10px;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.sidebar a:hover {
+  background-color: #9db1c6;
+}
+
+.sidebar a mat-icon {
+  margin-right: 10px;
+}
+
+.filesimg{
+  height: 100px;
+  width: 100px;
+}
+/* Footer Section in Sidebar */
+.sidebar p {
+  font-size: 14px;
+  color: #7f8c8d;
+  margin-top: 20px;
+}
+
+.footer-buttons {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.footer-buttons button {
+  margin: 5px 0;
+  color: white;
+  background-color: #2980B9;
+  border-radius: 5px;
+}
+
+.footer-buttons button:hover {
+  background-color: #3498DB;
+}
+
+
+.main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  margin-left: 260px; /* Adjusted to fit the sidebar width */
+  padding: 20px;
+  background-color: transparent;
+}
+
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.topbar-left, 
+.topbar-right {
+    display: flex;
+    align-items: center;
+}
+
+.topbar-left mat-icon,
+.topbar-right mat-icon {
+    font-size: 24px; 
+    color: white;
+}
+
+.topbar-left a {
+    color: white;
+    font-size: 18px;
+    text-decoration: none;
+    margin-left: 10px;
+}
+
+.topbar-right mat-form-field {
+    width: 200px;
+    margin-right: 15px;
+    margin-top: 15px;
+    border-radius: 7px;
+}
+
+
+.topbar-right mat-form-field .mat-icon {
+    color: black;
+}
+
+.topbar-right a {
+    display: flex;
+    align-items: center;
+    color: white;
+    font-size: 16px;
+    text-decoration: none;
+}
+
+.topbar-right mat-icon {
+    cursor: pointer;
+    font-size: 24px; 
+    color: white;
+}
+
+.settings-icon {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.icon-user {
+  font-size: 1.5rem;
+}
+
+#CEO{
+  margin-top: -15px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 2rem;
+  margin-top: 70px;
+}
+
+.userheader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.profile-details {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.profile-image {
+  width: 80px;
+  height: 80px;
+  border-radius: 20%;
+}
+
+.profile-actions .action-button {
+  background-color: rgb(196, 189, 189);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin-left: 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.profile-actions .action-button:hover {
+  background-color: #1565c0;
+}
+
+.content {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
+}
+
+.card {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card h3 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  color: black;
+}
+
+.platform-settings .section {
+  margin-bottom: 20px;
+  padding: 10px;
+}
+
+.platform-settings label {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.platform-settings input {
+  margin-right: 10px;
+}
+
+ #profilecard{
+  margin-top: 7px;
+ }
+
+ #personal{
+  margin-top: 30px;
+ }
+
+ #fullname{
+  margin-top: 30px;
+ }
+
+ #mobile{
+  margin-top: 20px;
+ }
+
+.conversations .conversation {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  padding: 2px;
+}
+
+.conversations img {
+  width: 50px;
+  height: 50px;
+  border-radius: 20%;
+  margin-right: 10px;
+}
+
+.conversations button {
+  margin-left: auto;
+  background-color: white;
+  color: rgb(83, 208, 233);
+  font-weight: 700;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.conversations button:hover {
+  background-color: #1565c0;
+}
+
+#username{
+  margin-top: 10px;
+  color: black;
+  font-weight: 400;
+}
+#usermsg{
+  margin-top: -10px;
+  font-size: 12px;
+}
+.projects {
+  display: flex;
+  gap: 1rem;
+  margin-top: 20px;
+}
+
+.project-card {
+  flex: 1;
+  background-color: white;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.project-card img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.view-project {
+  background: #2c3e50;
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1rem;
+  margin-top: 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+#newproject{
+  border: 1px gray dotted;
+  text-align: center;
+  font-size: 22px;
+  color: grey;
+}
+
+#projectname{
+  font-weight: 400;
+  font-size: 22px;
+  color: rgb(48, 44, 44);
+}
+/* General Small Devices (Phones) */
+@media (max-width: 767px) {
+  body {
+    background: 
+      linear-gradient(to bottom, transparent 45%, #f7f7f7 45%), 
+      url('src/assets/userbg.jpg');
+    background-size: 100%, cover;
+    background-repeat: no-repeat;
+    background-position: top;
+    height: auto;
+  }
+
+  .tables {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    position: relative;
+    width: 100%;
+    height: auto;
+    margin: 10px 0;
+    padding: 15px;
+    border-radius: 0;
+    flex-direction: row;
+    overflow-x: auto;
+    justify-content: space-between;
+  }
+
+  .sidebar ul {
+    display: flex;
+    flex-direction: row;
+    overflow-x: scroll;
+    margin-top: 0;
+    padding: 0 10px;
+  }
+
+  .sidebar li {
+    margin: 0 10px;
+  }
+
+  .sidebar a {
+    font-size: 14px;
+    padding: 5px 10px;
+  }
+
+  .main-content {
+    margin-left: 0;
+    margin-top: 20px;
+    padding: 10px;
+  }
+
+  .topbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .topbar-left, .topbar-right {
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .topbar-right mat-form-field {
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .container {
+    margin: 20px 10px;
+    padding: 1rem;
+  }
+
+  .userheader {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .content {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .projects {
+    flex-direction: column;
+  }
+
+  .project-card {
+    width: 100%;
+  }
+}
+
+/* Medium Devices (Tablets) */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .sidebar {
+    width: 150px;
+    padding: 10px;
+    margin: 5px;
+  }
+
+  .sidebar ul {
+    margin-top: 0;
+  }
+
+  .sidebar a {
+    font-size: 14px;
+    padding: 8px;
+  }
+
+  .main-content {
+    margin-left: 170px; /* Adjusted for smaller sidebar width */
+    padding: 15px;
+  }
+
+  .topbar {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .topbar-right {
+    justify-content: flex-end;
+  }
+
+  .container {
+    padding: 1.5rem;
+  }
+
+  .content {
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+  }
+
+  .projects {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .project-card {
+    flex: 1 1 45%;
+  }
+}
+
+/* Large Devices (Desktops) */
+@media (min-width: 1024px) {
+  .sidebar {
+    width: 200px;
+    position: fixed;
+    height: calc(100vh - 20px);
+  }
+
+  .main-content {
+    margin-left: 220px;
+  }
+
+  .topbar {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .content {
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+  }
+
+  .projects {
+    flex-wrap: nowrap;
+  }
+
+  .project-card {
+    flex: 1;
+  }
+}
+
